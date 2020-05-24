@@ -10,8 +10,7 @@ get_tmux_option() {
   fi
 }
 
-main()
-{
+main() {
   # set current directory variable
   current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -67,7 +66,7 @@ main()
 
   if $show_powerline; then
 
-      tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ☺  #[fg=${green},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}        " 
+      tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],}    #[fg=${green},bg=${gray}]#{?client_prefix,#[fg=${yellow}],}${left_sep}        "
       tmux set-option -g  status-right ""
       powerbg=${gray}
 
@@ -95,7 +94,7 @@ main()
       # window tabs 
       tmux set-window-option -g window-status-current-format "#[fg=${gray},bg=${dark_purple}]${left_sep}#[fg=${white},bg=${dark_purple}] #I #W #[fg=${dark_purple},bg=${gray}]${left_sep}"
   else
-    tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],} ☺ " 
+    tmux set-option -g status-left "#[bg=${green},fg=${dark_gray}]#{?client_prefix,#[bg=${yellow}],}   "
 
     tmux set-option -g  status-right ""
 
